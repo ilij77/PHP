@@ -1,3 +1,8 @@
+<?php
+$cols=10;
+$rows=10;
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -29,15 +34,32 @@
       <label>Количество строк: </label>
       <br />
       <input name='rows' type='text' value="" />
-      <br />
+      <br/>
       <label>Цвет: </label>
       <br />
       <input name='color' type='text' value="" />
       <br />
       <br />
-      <input type='submit' value='Создать' />
+      <input type='submit' value='Создать'/>
     </form>
     <!-- Таблица -->
+    <?
+    echo "<table border='1'>";
+    for ($tr=1;$tr<=$rows;$tr++){
+      echo "<tr>";
+      for ($td=1;$td<=$cols;$td++){
+        if ($tr==1 or $td==1)
+        echo "<th style='background-color: #2A4F6F'>".$tr*$td."</th>";
+       else
+        echo "<td>".$tr*$td."</td>";
+      }
+      echo "</tr>";
+    }
+
+    echo "</table>"
+
+    ?>
+
     <table border='1' width="200">
       <tr>
         <td>1</td>
