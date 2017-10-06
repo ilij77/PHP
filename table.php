@@ -2,11 +2,6 @@
 $cols=10;
 $rows=10;
 ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 
