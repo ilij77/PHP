@@ -48,30 +48,25 @@ foreach ($arr as $key=>$val){
 }
 
 ?>
-<br> <h1> Циклы</h1> <br>
+<br> <h1> Функции</h1> <br>
+
+
+
 <?php
-
-
-
-for ($b=1, $j=5;$b<=20; $b++){
-if ($b==5) continue;
-    print $j=$b."<br>";
-};
-
-$var="HELLO";
-$i=0;
-$len=strlen($var);
-while ($i<$len){
-    echo $var{$i++}."<br>";
-
+function say($name="Guest",$h=3){
+echo "<h$h> Hello, $name!</h3>";
 }
-$arr=[2=>1,7=>2,3,4,5];
-
-
-
-$f=1;
-do{
-    echo $f++;
-} while($f<=10);
-
+say("Mike",1);
+$n="John";
+say($n,2);
+say();
+$str="say";
+$str();
+function foo (){
+    static $x=0;
+    echo $x++;
+}
+foo();
+foo();
+foo();
 ?>

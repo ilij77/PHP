@@ -69,18 +69,14 @@ echo $len;
 
       ?>
 
-    <ul>
-      <li><a href=<?= $leftMenu[0]['href']; ?>'><?= $leftMenu[0]['link']; ?></a>
-      </li>
-      <li><a href=<?= $leftMenu[1]['href']; ?>'><?= $leftMenu[1]['link']; ?></a>
-      </li>
-      <li><a href=<?= $leftMenu[2]['href']; ?>'><?= $leftMenu[2]['link']; ?></a>
-      </li>
-      <li><a href=<?= $leftMenu[3]['href']; ?>'><?= $leftMenu[3]['link']; ?></a>
-      </li>
-      <li><a href=<?= $leftMenu[4]['href']; ?>'><?= $leftMenu[4]['link']; ?></a>
-      </li>
-    </ul>
+      <?php
+      echo "<ul>";
+   foreach ($leftMenu as $item){
+       echo "<li>";
+       echo "<a href={$item["href"]}'>{$item["link"]}</a>";
+   }
+   echo "</ul>"
+       ?>
     <!-- Меню -->
     <!-- Навигация -->
     
