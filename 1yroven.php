@@ -116,3 +116,4 @@ function ds(){
 
 echo __LINE__;
 echo __FILE__;
+print_r($GLOBALS);
