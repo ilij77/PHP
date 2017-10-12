@@ -48,6 +48,9 @@ foreach ($arr as $key=>$val){
 }
 
 ?>
+<?
+
+?>
 <br> <h1> Функции</h1> <br>
 
 
@@ -69,4 +72,48 @@ function foo (){
 foo();
 foo();
 foo();
+?>
+<br>
+<?
+function sum($s1, $s2, &$a, &$b, &$c){
+    $a=$s1*$s2;
+    $b=$s1-$s2;
+    $c=$s1/$s2;
+
+    return $s1+$s2;
+}
+$rez=sum(1,2,$mult,$dif,$sub);
+
+echo $rez ."-" .$mult."-" . $dif."-" . $sub;
+?>
+<tr></tr>
+<?=$mult;
+?>
+
+<?php
+
+function my_count($var, $mode=0){
+    if(is_null($var))return 0;
+    if (!is_array($var))return 1;
+    $cnt=0;
+    foreach ($var as $v){
+        if (is_array($v) and $mode)
+            $cnt+= my_count($v,1);
+
+        $cnt++;}
+    return $cnt;
+}
+
+?>
+<?php
+function ds(){
+    echo func_num_args();
+    echo( func_get_args());
+
+
+}
+
+ds(1,3,5,6,77,877,6);
+
+print_r(get_defined_functions());
 ?>

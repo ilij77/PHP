@@ -70,35 +70,33 @@ echo $len;
       ?>
 
       <?php
-      function menu($leftMenu,$vert=true){
-          if ($vert){
-              echo "<ul>";
-              foreach ($leftMenu as $item){
-                  echo "<li>";
-                  echo "<a href={$item["href"]}>{$item["link"]}</a>";
-              }
-              echo "</ul>";
-                        } else {
-              foreach ($leftMenu as $item){
-                  echo "<ul>";
-                  echo "<a href={$item["href"]}>{$item["link"]}</a>";
+      function menu($leftMenus,$vert=true){
+         $style="";
 
-
-              }
-              echo "</ul>";
+          if (!$vert){
+            $style=" style='display:inline; margin-right:25px'";
           }
-
+          echo "<ul>";
+          foreach ($leftMenus as $item){
+              echo "<li$style>";
+              echo "<a href={$item["href"]}>{$item["link"]}</a>";
+          }
+          echo "</ul>";
       }
 
        ?>
       <?php
-      menu(true)
+      menu($leftMenu)
       ?>
     <!-- Меню -->
     <!-- Навигация -->
     
   </div>
   <div id="footer">
+      <hr>
+      <?
+      menu($leftMenu,false);
+      ?>
     <!-- Нижняя часть страницы -->
     &copy; Супер Мега Веб-мастер, 2000 &ndash; <?php
     echo strftime("%Y");?>
