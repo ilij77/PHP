@@ -113,7 +113,6 @@ function ds(){
 
 }
 
-ds(1,3,5,6,77,877,6);
 
-print_r(get_defined_functions());
-?>
+echo __LINE__;
+echo __FILE__;
