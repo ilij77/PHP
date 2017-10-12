@@ -70,13 +70,30 @@ echo $len;
       ?>
 
       <?php
-      echo "<ul>";
-   foreach ($leftMenu as $item){
-       echo "<li>";
-       echo "<a href={$item["href"]}'>{$item["link"]}</a>";
-   }
-   echo "</ul>"
+      function menu($leftMenu,$vert=true){
+          if ($vert){
+              echo "<ul>";
+              foreach ($leftMenu as $item){
+                  echo "<li>";
+                  echo "<a href={$item["href"]}>{$item["link"]}</a>";
+              }
+              echo "</ul>";
+                        } else {
+              foreach ($leftMenu as $item){
+                  echo "<ul>";
+                  echo "<a href={$item["href"]}>{$item["link"]}</a>";
+
+
+              }
+              echo "</ul>";
+          }
+
+      }
+
        ?>
+      <?php
+      menu(true)
+      ?>
     <!-- Меню -->
     <!-- Навигация -->
     
