@@ -2,7 +2,17 @@
 <html>
 
 <head>
-  <title>Сайт нашей школы</title>
+    <?php
+    $title = 'Сайт нашей школы';
+    $header = "$welcome, Гость!";
+    $id = strtolower(strip_tags(trim($_GET['id'])));
+    switch($id){ case 'about': $title = 'О сайте';
+    $header = 'О нашем сайте'; break; case 'contact': $title = 'Контакты';
+    $header = 'Обратная связь'; break; case 'table': $title = 'Таблица умножения';
+    $header = 'Таблица умножения'; break; case 'calc': $title = 'Он-лайн калькулятор';
+    $header = 'Калькулятор'; break; }
+    ?>
+  <title><?php echo $title?></title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,10 +28,13 @@
 
   <div id="content">
     <!-- Заголовок -->
-    <h1>Добро пожаловать на наш сайт!</h1>
+    <h1><?php echo $header?></h1>
     <!-- Заголовок -->
     <!-- Область основного контента -->
-
+      <?php switch($id){ case 'about': include 'about.php';
+      break; case 'contact': include 'contact.php'; break;
+      case 'table': include 'table.php'; break; case 'calc': include 'calc.php';
+      break; default: include 'index.inc.php'; } ?>
     <?php
     $n = "Iliyaа";
     $len = mb_strlen($n);
@@ -60,11 +73,11 @@ echo $len;
     <!-- Меню -->
       <?php
       $leftMenu=[
-          ['link'=>'Домой','href'=>'index.php'],
+          ['link'=>'Домой','href'=>'index.php?id=about'],
           ['link'=>'О нас','href'=>'about.php'],
-          ['link'=>'Контакты','href'=>'contact.php'],
-          ['link'=>'Таблица умножения','href'=>'table.php'],
-          ['link'=>'Калькулятор','href'=>'calc.php'],
+          ['link'=>'Контакты','href'=>'?id=contact'],
+          ['link'=>'Таблица умножения','href'=>'?id=table'],
+          ['link'=>'Калькулятор','href'=>'?id=calc'],
       ];
 
       ?>
